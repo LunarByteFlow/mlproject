@@ -1,6 +1,7 @@
 # The sys module in python provides various functions and variables that are used to manipulate different parts of the python runtime environment
 import sys
 import logging
+from src.logger import logging
 # from src.logger import logging
 
 def error_message_detail(error,error_detail:sys):
@@ -9,7 +10,7 @@ def error_message_detail(error,error_detail:sys):
     error_message = "Error Occured in Python Script name [{0}] line number [{1}] error message [{2}]".format(
     file_name,exc_tb.tb_lineno,str(error) 
     )
-    return error
+    return error_message
 
 class CustomException(Exception):
     def __init__(self,error_message,error_detail:sys):
