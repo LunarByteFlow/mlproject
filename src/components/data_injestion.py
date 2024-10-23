@@ -11,6 +11,7 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
+from src.components.model_trainer import ModelTrainerConfig,ModelTrainer
 
 
 # Ab humary pas jo is type ki information hoti hy k data kahan par or kahan se lakar save 
@@ -51,6 +52,13 @@ class DataInjestion:
 if __name__ == '__main__':
     obj = DataInjestion()
     train_data,test_data = obj.initiate_data_injestion()
-
     data_transformation = DataTransformation()
     train_arr,test_arr,_ = data_transformation.initiate_data_transformation(train_data,test_data)
+    modelTrainer = ModelTrainer()
+    print(modelTrainer.initiate_model_trainer(train_arr,test_arr))
+
+
+
+
+
+
